@@ -1,1 +1,10 @@
+Introducing morphology
+Creating a stemmer and lemmatizer
+Developing a stemmer for non-English languages
+Creating a morphological analyzer
+Creating a morphological generator
+Creating a search engine
+
+https://www.packtpub.com/books/content/morphology-%E2%80%93-getting-our-feet-wet
+
 
