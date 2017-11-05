@@ -1,1 +1,1 @@
-This file will be filled with weeklycrawlers that are stored in RaspberryPi
+This folder will be filled with weeklycrawlers that are stored in RaspberryPi

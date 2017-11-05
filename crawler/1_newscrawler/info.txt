@@ -1,6 +1,5 @@
-This file contains scrapers to be used for scraping news. It is a scrapy folder, it was not written
-from top to down. To use it you first need to write a spider. The rest is executing the code in
-the cmd screen or terminal. For more information see:
+This folder contains scrapers to be used for scraping news. It is a scrapy folder, it was not written from top to down. To use it you first need to write a spider. The rest is executing the
+code in the cmd screen or terminal. For more information see:
 
 https://www.youtube.com/watch?v=1EFnX1UkXVU
 https://www.youtube.com/watch?v=P-_TpZ54Vcw

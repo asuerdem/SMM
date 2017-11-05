@@ -1,4 +1,4 @@
-This file contains classifier files for calling data from database.
+This folder contains classifier files for calling data from database.
 
 1. At the very first it will only contain keywords to be used in Mongo queries.
 2. Later it will contain xlsx files that can generate more complex queries (such as sheets
