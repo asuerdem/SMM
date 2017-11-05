@@ -1,0 +1,8 @@
+This file contains classifier files for calling data from database.
+
+1. At the very first it will only contain keywords to be used in Mongo queries.
+2. Later it will contain xlsx files that can generate more complex queries (such as sheets
+that includes keywords that can call data when used cross sectionally.
+3. Lastly it will contain the classifiers which are output of an ML algorithm, containing
+the weights of words to differentiate a document to be included to or excluded from corpus.
+

@@ -1,0 +1,6 @@
+The files contains sample codes that were used to call data from SQLite file. 
+
+1. First the codes will be modified to do queries from Mongo.
+2. Then they will be adapted to use classifiers as inputs and xlsx files as outputs.
+3. Then they will be adapted for interface to be used in the monitoringscience website.
+ 

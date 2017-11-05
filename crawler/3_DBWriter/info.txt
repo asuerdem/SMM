@@ -1,0 +1,7 @@
+dbwriter.py contains the codes for writing the outputs of scrapy. It cleanes the json files and
+writes to SQL database. It is a developing code:
+
+1. It will be used only for cleaning the json files and wont write into SQL.
+2. It will be designed for cloud machine and be automated for cleaned outputs to be written to 
+MongoDB.
+

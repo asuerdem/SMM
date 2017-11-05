@@ -1,0 +1,2 @@
+This file is the store of cleaned JSONs. It will be functioning in the cloud machine after all
+scrapers are written for ultimate purpose.

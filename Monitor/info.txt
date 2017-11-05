@@ -1,0 +1,3 @@
+This folder includes the interface to be seen in website. The interface has already been 
+written for R Shiny but it uses Mongo as input, so it will function after the project is
+in cloud machine

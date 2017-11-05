@@ -1,0 +1,5 @@
+The folder includes sample query codes to call data from SQLite database. 
+
+1. It will be rewritten to employ MongoDB instead of SQLite
+2. It will fulfill the objectives written in the info.txt files in subdirectories.
+

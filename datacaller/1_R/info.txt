@@ -1,0 +1,2 @@
+This file contains the codes for R to do mongo queries. The codes are already included in Monitor
+folder, yet they will be needed to be seperated to function analytically.

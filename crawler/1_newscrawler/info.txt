@@ -1,0 +1,18 @@
+This file contains scrapers to be used for scraping news. It is a scrapy folder, it was not written
+from top to down. To use it you first need to write a spider. The rest is executing the code in
+the cmd screen or terminal. For more information see:
+
+https://www.youtube.com/watch?v=1EFnX1UkXVU
+https://www.youtube.com/watch?v=P-_TpZ54Vcw
+https://github.com/mjhea0/Scrapy-Samples
+
+Rest of the files:
+
+commands: includes sample commands to be written to cmd or terminal screen. It also includes commandgenerator.py that generates commands for different sources.
+
+dataout: is the folder where outputs of scrapy are stored. When finished with scrapy, please cut
+the outputs to another file in your computer. The files are too big to be uploaded to GitHub.
+
+sleeper: is independent from scrapy. We use it between two commands to be pasted to terminal. See
+sample_commands.txt file in commands folder.
+

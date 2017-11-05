@@ -1,6 +1,25 @@
 from __future__ import division
 from random import shuffle
 
+# Command generator generates commands to be written into terminal. Its example usage is:
+
+# cg = HurriyetGenerator()
+# cg.execute("hurriyet",2005,2005,1)
+# cg.execute("hurriyet",2006,2006,1)
+# cg.execute("hurriyet",2007,2007,1)
+# cg.execute("hurriyet",2008,2008,1)
+# cg.execute("hurriyet",2009,2009,1)
+# cg.execute("hurriyet",2010,2010,1)
+
+# cg = WiredGenerator()
+# cg.execute("wired",1,20000,3)
+#
+# cg = CumhuriyetGenerator()
+# cg.execute("cumhuriyet",1,20000,200)
+#
+# cg = YenisafakGenerator()
+# cg.execute("yenisafak",1,20000,200)
+
 class CommandGenerator:
     source = ""
     sample = "scrapy crawl " + source + " -a yearmonth=%s -o dataout/" + source + "%s.json -t json"
