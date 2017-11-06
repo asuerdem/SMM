@@ -1,0 +1,201 @@
+cd .\Documents\newscrawler
+scrapy crawl cumhuriyet -a begin="2201" -a end="2400" -o dataout/cumhuriyet2201.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="3001" -a end="3200" -o dataout/cumhuriyet3001.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="18401" -a end="18600" -o dataout/cumhuriyet18401.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="19001" -a end="19200" -o dataout/cumhuriyet19001.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="1201" -a end="1400" -o dataout/cumhuriyet1201.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="13601" -a end="13800" -o dataout/cumhuriyet13601.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="2801" -a end="3000" -o dataout/cumhuriyet2801.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="10801" -a end="11000" -o dataout/cumhuriyet10801.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="12601" -a end="12800" -o dataout/cumhuriyet12601.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="801" -a end="1000" -o dataout/cumhuriyet801.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="17001" -a end="17200" -o dataout/cumhuriyet17001.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="3601" -a end="3800" -o dataout/cumhuriyet3601.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="9601" -a end="9800" -o dataout/cumhuriyet9601.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="14601" -a end="14800" -o dataout/cumhuriyet14601.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="16601" -a end="16800" -o dataout/cumhuriyet16601.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="13001" -a end="13200" -o dataout/cumhuriyet13001.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="201" -a end="400" -o dataout/cumhuriyet201.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="16401" -a end="16600" -o dataout/cumhuriyet16401.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="2401" -a end="2600" -o dataout/cumhuriyet2401.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="1401" -a end="1600" -o dataout/cumhuriyet1401.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="16001" -a end="16200" -o dataout/cumhuriyet16001.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="19201" -a end="19400" -o dataout/cumhuriyet19201.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="11001" -a end="11200" -o dataout/cumhuriyet11001.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="12401" -a end="12600" -o dataout/cumhuriyet12401.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="18001" -a end="18200" -o dataout/cumhuriyet18001.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="15401" -a end="15600" -o dataout/cumhuriyet15401.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="12201" -a end="12400" -o dataout/cumhuriyet12201.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="2601" -a end="2800" -o dataout/cumhuriyet2601.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="6201" -a end="6400" -o dataout/cumhuriyet6201.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="11201" -a end="11400" -o dataout/cumhuriyet11201.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="11401" -a end="11600" -o dataout/cumhuriyet11401.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="9801" -a end="10000" -o dataout/cumhuriyet9801.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="7801" -a end="8000" -o dataout/cumhuriyet7801.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="15201" -a end="15400" -o dataout/cumhuriyet15201.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="17201" -a end="17400" -o dataout/cumhuriyet17201.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="601" -a end="800" -o dataout/cumhuriyet601.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="1801" -a end="2000" -o dataout/cumhuriyet1801.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="8401" -a end="8600" -o dataout/cumhuriyet8401.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="1601" -a end="1800" -o dataout/cumhuriyet1601.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="14201" -a end="14400" -o dataout/cumhuriyet14201.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="14401" -a end="14600" -o dataout/cumhuriyet14401.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="4401" -a end="4600" -o dataout/cumhuriyet4401.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="9401" -a end="9600" -o dataout/cumhuriyet9401.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="18601" -a end="18800" -o dataout/cumhuriyet18601.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="4201" -a end="4400" -o dataout/cumhuriyet4201.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="2001" -a end="2200" -o dataout/cumhuriyet2001.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="12001" -a end="12200" -o dataout/cumhuriyet12001.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="19401" -a end="19600" -o dataout/cumhuriyet19401.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="10001" -a end="10200" -o dataout/cumhuriyet10001.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="18801" -a end="19000" -o dataout/cumhuriyet18801.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="7201" -a end="7400" -o dataout/cumhuriyet7201.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="15001" -a end="15200" -o dataout/cumhuriyet15001.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="6001" -a end="6200" -o dataout/cumhuriyet6001.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="8801" -a end="9000" -o dataout/cumhuriyet8801.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="11801" -a end="12000" -o dataout/cumhuriyet11801.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="3401" -a end="3600" -o dataout/cumhuriyet3401.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="3801" -a end="4000" -o dataout/cumhuriyet3801.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="14801" -a end="15000" -o dataout/cumhuriyet14801.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="18201" -a end="18400" -o dataout/cumhuriyet18201.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="9201" -a end="9400" -o dataout/cumhuriyet9201.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="10401" -a end="10600" -o dataout/cumhuriyet10401.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="13201" -a end="13400" -o dataout/cumhuriyet13201.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="3201" -a end="3400" -o dataout/cumhuriyet3201.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="5001" -a end="5200" -o dataout/cumhuriyet5001.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="15601" -a end="15800" -o dataout/cumhuriyet15601.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="7401" -a end="7600" -o dataout/cumhuriyet7401.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="8001" -a end="8200" -o dataout/cumhuriyet8001.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="19601" -a end="19800" -o dataout/cumhuriyet19601.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="10601" -a end="10800" -o dataout/cumhuriyet10601.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="10201" -a end="10400" -o dataout/cumhuriyet10201.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="17801" -a end="18000" -o dataout/cumhuriyet17801.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="17601" -a end="17800" -o dataout/cumhuriyet17601.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="13401" -a end="13600" -o dataout/cumhuriyet13401.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="5601" -a end="5800" -o dataout/cumhuriyet5601.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="11601" -a end="11800" -o dataout/cumhuriyet11601.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="4801" -a end="5000" -o dataout/cumhuriyet4801.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="12801" -a end="13000" -o dataout/cumhuriyet12801.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="1" -a end="200" -o dataout/cumhuriyet1.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="7601" -a end="7800" -o dataout/cumhuriyet7601.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="5201" -a end="5400" -o dataout/cumhuriyet5201.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="8601" -a end="8800" -o dataout/cumhuriyet8601.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="401" -a end="600" -o dataout/cumhuriyet401.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="15801" -a end="16000" -o dataout/cumhuriyet15801.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="13801" -a end="14000" -o dataout/cumhuriyet13801.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="16201" -a end="16400" -o dataout/cumhuriyet16201.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="4001" -a end="4200" -o dataout/cumhuriyet4001.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="9001" -a end="9200" -o dataout/cumhuriyet9001.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="6601" -a end="6800" -o dataout/cumhuriyet6601.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="5801" -a end="6000" -o dataout/cumhuriyet5801.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="5401" -a end="5600" -o dataout/cumhuriyet5401.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="8201" -a end="8400" -o dataout/cumhuriyet8201.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="4601" -a end="4800" -o dataout/cumhuriyet4601.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="6401" -a end="6600" -o dataout/cumhuriyet6401.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="1001" -a end="1200" -o dataout/cumhuriyet1001.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="16801" -a end="17000" -o dataout/cumhuriyet16801.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="6801" -a end="7000" -o dataout/cumhuriyet6801.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="17401" -a end="17600" -o dataout/cumhuriyet17401.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="7001" -a end="7200" -o dataout/cumhuriyet7001.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="19801" -a end="20000" -o dataout/cumhuriyet19801.json -t json
+python sleeper.py
+scrapy crawl cumhuriyet -a begin="14001" -a end="14200" -o dataout/cumhuriyet14001.json -t json
+python sleeper.py

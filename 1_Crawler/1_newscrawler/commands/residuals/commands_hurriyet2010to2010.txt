@@ -1,0 +1,13 @@
+cd .\Documents\newscrawler
+scrapy crawl hurriyet -a yearmonth="2010-01" -o dataout/hurriyet2010_01.json -t json
+scrapy crawl hurriyet -a yearmonth="2010-02" -o dataout/hurriyet2010_02.json -t json
+scrapy crawl hurriyet -a yearmonth="2010-03" -o dataout/hurriyet2010_03.json -t json
+scrapy crawl hurriyet -a yearmonth="2010-04" -o dataout/hurriyet2010_04.json -t json
+scrapy crawl hurriyet -a yearmonth="2010-05" -o dataout/hurriyet2010_05.json -t json
+scrapy crawl hurriyet -a yearmonth="2010-06" -o dataout/hurriyet2010_06.json -t json
+scrapy crawl hurriyet -a yearmonth="2010-07" -o dataout/hurriyet2010_07.json -t json
+scrapy crawl hurriyet -a yearmonth="2010-08" -o dataout/hurriyet2010_08.json -t json
+scrapy crawl hurriyet -a yearmonth="2010-09" -o dataout/hurriyet2010_09.json -t json
+scrapy crawl hurriyet -a yearmonth="2010-10" -o dataout/hurriyet2010_10.json -t json
+scrapy crawl hurriyet -a yearmonth="2010-11" -o dataout/hurriyet2010_11.json -t json
+scrapy crawl hurriyet -a yearmonth="2010-12" -o dataout/hurriyet2010_12.json -t json
