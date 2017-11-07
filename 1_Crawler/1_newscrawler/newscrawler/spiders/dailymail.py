@@ -18,11 +18,11 @@ class DailyMailSpider(CrawlSpider):
         # changes according to the logic of the archive link generating method
         # i.e. below isoformat is 2017-07-01 and we transformed it by adding .replace("-","") (replace - with nothing)
         # to convert it to 20170701
+        # http://www.dailymail.co.uk/home/sitemaparchive/day_20170701.html
         date_inds  = [d.date().isoformat().replace("-","") for d in pd.date_range(begin_date,end_date)]
         self.start_urls = ["http://www.dailymail.co.uk/home/sitemaparchive/day_%s.html" % d for d in date_inds]
-        http://www.dailymail.co.uk/home/sitemaparchive/day_20170701.html
     rules = (
-        Rule(LinkExtractor(allow=(), restrict_xpaths=('//ol[@class="margin archive-news-list"]/li/a',)), callback="parse_items", follow= True),
+        Rule(LinkExtractor(allow=(), restrict_xpaths=('//ul[@class="archive-articles debate link-box"]//a',)), callback="parse_items", follow= True),
     )
 
     def parse_items(self, response):
