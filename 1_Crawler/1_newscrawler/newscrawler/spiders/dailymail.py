@@ -32,9 +32,9 @@ class DailyMailSpider(CrawlSpider):
         item["lang"] = "en"
         item["source"] = "dailymail"
 
-        title       = hxs.xpath('//h1[@itemprop="headline"]/text()').extract()
-        intro       = hxs.xpath('//div[@class="intro"]/p/text()').extract()
-        author      = hxs.xpath('//span[@itemprop="name"]/a/text()').extract()
+        title       = hxs.xpath('//div[@class="js-article-text"]/h1/text()').extract()
+        intro       = ""
+        author      = hxs.xpath('//p[@class="author-section byline-plain"]/a/text()').extract()
         category    = hxs.xpath('//ol[@class="breadcrumbs clearfix"]//a//text()').extract()
         new_content = hxs.xpath('//div[@itemprop="articleBody"]/p//text()').extract()
         date_time   = hxs.xpath('//ul[@class="caption meta inline-pipes-list"]//time/@datetime').extract()
