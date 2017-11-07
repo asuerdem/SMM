@@ -12,7 +12,7 @@ class DailyMailSpider(CrawlSpider):
     allowed_domains = ["dailymail.co.uk"]
 
     def __init__(self, yearmonth='', *args, **kwargs):
-        super(IndependentSpider, self).__init__(*args, **kwargs)
+        super(DailyMailSpider, self).__init__(*args, **kwargs)
         begin_date = pd.Timestamp(yearmonth + "-01") # Don't change
         end_date = pd.Timestamp(begin_date) + pd.DateOffset(months=1) - pd.DateOffset(days=1) # Dont change
         # changes according to the logic of the archive link generating method
@@ -30,7 +30,7 @@ class DailyMailSpider(CrawlSpider):
         item = NewsItem()
         item["link"] = response.request.url
         item["lang"] = "en"
-        item["source"] = "independent"
+        item["source"] = "dailymail"
 
         title       = hxs.xpath('//h1[@itemprop="headline"]/text()').extract()
         intro       = hxs.xpath('//div[@class="intro"]/p/text()').extract()
