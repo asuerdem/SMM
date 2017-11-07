@@ -6,18 +6,21 @@ from datetime import datetime
 import pandas as pd
 import re
 
-
-class IndependentSpider(CrawlSpider):
-    name = "independent"
-    allowed_domains = ["independent.co.uk"]
+# Changes according to the newspaper
+class DailyMailSpider(CrawlSpider):
+    name = "dailymail" #could be dmspider as well
+    allowed_domains = ["dailymail.co.uk"]
 
     def __init__(self, yearmonth='', *args, **kwargs):
         super(IndependentSpider, self).__init__(*args, **kwargs)
-        begin_date = pd.Timestamp(yearmonth + "-01")
-        end_date = pd.Timestamp(begin_date) + pd.DateOffset(months=1) - pd.DateOffset(days=1)
-        date_inds  = [d.date().isoformat() for d in pd.date_range(begin_date,end_date)]
-        self.start_urls = ["http://www.independent.co.uk/archive/%s" % d for d in date_inds]
-
+        begin_date = pd.Timestamp(yearmonth + "-01") # Don't change
+        end_date = pd.Timestamp(begin_date) + pd.DateOffset(months=1) - pd.DateOffset(days=1) # Dont change
+        # changes according to the logic of the archive link generating method
+        # i.e. below isoformat is 2017-07-01 and we transformed it by adding .replace("-","") (replace - with nothing)
+        # to convert it to 20170701
+        date_inds  = [d.date().isoformat().replace("-","") for d in pd.date_range(begin_date,end_date)]
+        self.start_urls = ["http://www.dailymail.co.uk/home/sitemaparchive/day_%s.html" % d for d in date_inds]
+        http://www.dailymail.co.uk/home/sitemaparchive/day_20170701.html
     rules = (
         Rule(LinkExtractor(allow=(), restrict_xpaths=('//ol[@class="margin archive-news-list"]/li/a',)), callback="parse_items", follow= True),
     )
