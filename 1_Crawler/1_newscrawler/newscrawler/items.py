@@ -17,8 +17,8 @@ class NewsItem(Item):
     content = Field()
     image_urls = Field()
 
- class UrlItem(Item):
-    link    = Field()
-    lang    = Field()
-    source  = Field()
-    newsurl = Field()
+class UrlItem(Item):
+    link     = Field()
+    lang     = Field()
+    source   = Field()
+    newslink = Field()
