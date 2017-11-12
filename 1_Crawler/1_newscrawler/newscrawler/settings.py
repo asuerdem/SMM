@@ -18,10 +18,10 @@ NEWSPIDER_MODULE = 'newscrawler.spiders'
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'sciencecrawler (+http://www.yourdomain.com)'
 
-DOWNLOADER_MIDDLEWARES = {
-    'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware': None,
-    'random_useragent.RandomUserAgentMiddleware': 400
-}
+# DOWNLOADER_MIDDLEWARES = {
+#     'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware': None,
+#     'random_useragent.RandomUserAgentMiddleware': 400
+#}
 
 USER_AGENT_LIST = "user_agent_list.txt"
 # Obey robots.txt rules
