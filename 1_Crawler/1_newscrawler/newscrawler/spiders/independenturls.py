@@ -7,8 +7,8 @@ import pandas as pd
 import re
 
 
-class IndependentSpider(CrawlSpider):
-    name = "independent"
+class IndependentUrlSpider(CrawlSpider):
+    name = "independenturls"
     allowed_domains = ["independent.co.uk"]
 
     def __init__(self, yearmonth='', *args, **kwargs):
