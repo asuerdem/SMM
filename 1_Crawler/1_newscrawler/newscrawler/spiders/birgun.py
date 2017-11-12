@@ -16,7 +16,7 @@ class BirgunSpider(CrawlSpider):
         self.start_urls = ['http://www.birgun.net/haber-detay/birgun-almanak-2014-un-en-zaytung-halleri-73348.html']
         # self.start_urls = [start_url]
         # http://www.birgun.net/ara?q=selahattin+demirta%C5%9F&c=&fd=2017-08-01&td=2017-08-29&a=
-        
+
     rules = (
         Rule(LinkExtractor(allow=(), restrict_xpaths=('//div[@class="pagination"]/a[@class="next"]',)), callback="parse_items", follow= True),
     )
@@ -49,5 +49,5 @@ class BirgunSpider(CrawlSpider):
         item["category"]   = '|'.join(category)
         item["date_time"]  = " ".join(date_time)
         item["author"]     = '|'.join(author)
-	item['image_urls'] = [image_url]
+        item['image_urls'] = [image_url]
         return(item)
