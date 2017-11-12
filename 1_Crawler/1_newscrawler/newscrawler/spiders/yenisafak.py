@@ -42,6 +42,4 @@ class YenisafakSpider(CrawlSpider):
         item["content"]    = re.sub('\s{2,}',' ',new_content)
         item["category"]   = '|'.join(category)
         item["date_time"]  = " ".join(date_time)
-
-
         return(item)
