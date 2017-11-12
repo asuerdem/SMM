@@ -60,6 +60,4 @@ class IndependentUrlSpider(CrawlSpider):
         datte    = datte.split('/')
         item["date_time"] = datte[2] + '-'  + datte[1] + '-' + datte[0] + 'T' + tme
         item["author"] = author
-
-
-return(item)
+        return(item)
