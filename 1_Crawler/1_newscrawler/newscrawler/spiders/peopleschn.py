@@ -67,7 +67,7 @@ class PeoplesChinaSpider(CrawlSpider):
             date_time = hxs.xpath('//span[@id="p_publishtime"]//text()').extract()
             date_time = "".join(date_time)
 
-        print date_time
+        print(date_time)
 
         if not author:
             author = hxs.xpath('//h3[@class="wb_2 clear"]//text()').extract()
