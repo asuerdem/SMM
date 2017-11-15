@@ -4,6 +4,7 @@ from scrapy.selector import HtmlXPathSelector
 from ..items import NewsItem
 from datetime import datetime
 import pandas as pd
+import newsplease
 import re
 
 
@@ -32,6 +33,7 @@ class IndependentUrlSpider(CrawlSpider):
         hxs = HtmlXPathSelector(response)
         item = NewsItem()
         item["link"] = response.request.url
+        newsplease.from_url([item["link"]])
         item["lang"] = "en"
         item["source"] = "independent"
 
