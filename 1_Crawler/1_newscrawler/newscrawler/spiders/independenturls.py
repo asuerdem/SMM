@@ -18,11 +18,10 @@ class IndependentUrlSpider(CrawlSpider):
         date_inds  = [d.date().isoformat() for d in pd.date_range(begin_date,end_date)]
         self.start_urls = ["http://www.independent.co.uk/archive/%s" % d for d in date_inds]
 
-     rules = (
-         Rule(LinkExtractor(allow=(), restrict_xpaths=('//ol[@class="margin archive-news-list"]/li/a',)), callback="parse_items", follow= True),
-     )
+    rules = (
+         Rule(LinkExtractor(allow=(), restrict_xpaths=('//ol[@class="margin archive-news-list"]/li/a',)), callback="start_requests", follow= True),)
 
-    def start_requests(self):
+    def start_requests(self, response):
         hxs = HtmlXPathSelector(response)
         for url in self.start_urls:
             newslinks = hxs.xpath('//ol[@class="margin archive-news-list"]/li/@href').extract()
