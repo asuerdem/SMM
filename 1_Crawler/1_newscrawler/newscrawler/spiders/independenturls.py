@@ -1,6 +1,7 @@
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 from scrapy.selector import HtmlXPathSelector
+from scrapy.http import Request
 from ..items import NewsItem
 from datetime import datetime
 import pandas as pd
@@ -22,12 +23,12 @@ class IndependentUrlSpider(CrawlSpider):
     rules = (
          Rule(LinkExtractor(allow=(), restrict_xpaths=('//ol[@class="margin archive-news-list"]/li/a',)), callback="start_requests", follow= True),)
 
-    def start_requests(self, response):
+    def start_requests(self):
         hxs = HtmlXPathSelector(response)
         for url in self.start_urls:
             newslinks = hxs.xpath('//ol[@class="margin archive-news-list"]/li/@href').extract()
             for link in newslinks:
-                yield scrapy.Request(link, callback=self.parse_items, dont_filter=True)
+                yield(Request(link, callback=self.parse_items, dont_filter=True))
 
     def parse_items(self, response):
         hxs = HtmlXPathSelector(response)
