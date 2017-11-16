@@ -3,6 +3,7 @@ from scrapy.linkextractors import LinkExtractor
 from scrapy.selector import HtmlXPathSelector
 from ..items import NewsItem
 from datetime import datetime
+from newsplease import NewsPlease
 import pandas as pd
 import re
 
@@ -28,68 +29,13 @@ class PeoplesChinaSpider(CrawlSpider):
         hxs = HtmlXPathSelector(response)
         item = NewsItem()
         item["link"] = response.request.url
-        item["lang"] = "en"
-        item["source"] = "PeoplesChina"
-
-        title       = hxs.xpath('//span[@id="p_title"]/text()').extract()
-        if not title:
-            title = hxs.xpath('//div[@class="w980 wb_10 clear"]/h1//text()').extract()
-        if not title:
-            title = hxs.xpath('//div[@id="p_title"]//text()').extract()
-
-        intro       = ""
-        author      = hxs.xpath('//div[@class="wb_1 clear"]//text()').extract()
-        if not author:
-            author  = hxs.xpath('//div[@class="w980 wb_10 clear"]/div//text()').extract()
-        category    = hxs.xpath('//div[@class="w980 wbnav wbnav2 clear"]//a//text()').extract()
-        if not category:
-            category    = hxs.xpath('//div[@id="p_navigator"]//text()').extract()
-
-        new_content = hxs.xpath('//div[@id="p_content"]/p//text()').extract()
-        if not new_content:
-            new_content = hxs.xpath('//div[@class="wb_12 clear"]/p//text()').extract()
-        if not new_content or len("".join(new_content))<10:
-            new_content = hxs.xpath('//span[@id="p_content"]/text()').extract()
-        if not new_content or len("".join(new_content))<10:
-            new_content = hxs.xpath('//div[@id="p_content"]//text()').extract()
-        if not new_content or len("".join(new_content))<10:
-            new_content = hxs.xpath('//font[@class="fbody"]//text()').extract()
-
-
-
-        author      = "".join(author)
-        date_time   = author
-        if not date_time or len(date_time)<2:
-            date_time = hxs.xpath('//div[@id="p_publishtime"]//text()').extract()
-            date_time = "".join(date_time)
-
-        if not date_time or len(date_time)<2:
-            date_time = hxs.xpath('//span[@id="p_publishtime"]//text()').extract()
-            date_time = "".join(date_time)
-
-        print(date_time)
-
-        if not author:
-            author = hxs.xpath('//h3[@class="wb_2 clear"]//text()').extract()
-            author      = "".join(author)
-
-        #
-        # Processing outputs
-        author = re.findall('^.*[)]',author)
-        author = [re.sub('^By\s','',a) for a in author]
-
-        new_content = [p for p in new_content if not re.search(u'\u2022',p)]
-        new_content = [p for p in new_content if not re.search('font-family|background-color:',p)]
-        new_content = ' '.join(new_content)
-        new_content = re.sub('\n','',new_content)
-        item["content"] = re.sub('\s{2,}',' ',new_content)
-        author      = re.sub("[)()]","",'|'.join(author))
-        item["category"] = '|'.join(category)
-        item["intro"]  = ""
-        item["title"]  = ' '.join(title)
-        date_time = re.findall('[0-9]+:[0-9]{2}.*',date_time)
-        item["date_time"] = ''.join(date_time)
-        item["author"] = author
-
-
+        article = NewsPlease.from_url(item["link"])
+        item["lang"]   = "en"
+        item["source"] = "peopleschina"
+        item['title']   = article.title
+        item['intro']   = article.description
+        item["author"]  = '|'.join(article.authors)
+        item["content"] = article.text
+        item["date_time"] = article.date_publish.isoformat()
+        item["category"]  = ''
         return(item)
