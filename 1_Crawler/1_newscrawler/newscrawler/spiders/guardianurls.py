@@ -3,12 +3,13 @@ from scrapy.linkextractors import LinkExtractor
 from scrapy.selector import HtmlXPathSelector
 from ..items import NewsItem
 from datetime import datetime
+from newsplease import NewsPlease
 import pandas as pd
 import re
 
 
 class GuardianSpider(CrawlSpider):
-    name = "guardian" # this will be used to call scrapy crawl ... code
+    name = "guardianurls" # this will be used to call scrapy crawl ... code
     allowed_domains = ["theguardian.com"]
 
     def __init__(self, yearmonth='', *args, **kwargs):
@@ -28,7 +29,7 @@ class GuardianSpider(CrawlSpider):
         
     rules = (# Locates individual news page urls from each day's in archive
         # Rule(LinkExtractor(allow=(), restrict_xpaths=('//div[@class="fc-item__container"]/a',)), callback="parse_items", follow= True),
-        Rule(LinkExtractor(allow=(), restrict_xpaths=('//a[@data-link-name="article"]',)), callback="parse_items", follow= True),
+        Rule(LinkExtractor(allow=(), restrict_xpaths=('//a[@data-link-name="article"]',)), callback="parse_items", follow= False),
     )
 
     def parse_items(self, response):

@@ -8,7 +8,7 @@ import re
 
 
 class IndependentSpider(CrawlSpider):
-    name = "independent"
+    name = "independenturls2"
     allowed_domains = ["independent.co.uk"]
 
     def __init__(self, yearmonth='', *args, **kwargs):

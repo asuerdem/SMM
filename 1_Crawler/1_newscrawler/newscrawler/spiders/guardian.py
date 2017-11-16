@@ -16,7 +16,7 @@ class GuardianSpider(CrawlSpider):
         #  The archive pages that we usually generate by using Excel
         super(GuardianSpider, self).__init__(*args, **kwargs)
         begin_date = pd.Timestamp(yearmonth + "-01")
-        end_date = pd.Timestamp(begin_date) + pd.DateOffset(months=1) - pd.DateOffset(days=1)
+        end_date = pd.Timestamp(begin_date) + pd.DateOffset(months=0) + pd.DateOffset(days=15)
         date_inds  = [d.date().isoformat().replace("-","/") for d in pd.date_range(begin_date,end_date)]
         month_dict = {'01':'jan', '02':'feb', '03':'mar', '04':'april', '05':'may',
         '06':'jun', '07':'jul', '08':'aug', '09':'sep', '10':'oct', '11':'nov', '12':'dec' }
@@ -27,8 +27,8 @@ class GuardianSpider(CrawlSpider):
         
         
     rules = (# Locates individual news page urls from each day's in archive
-        # Rule(LinkExtractor(allow=(), restrict_xpaths=('//div[@class="fc-item__container"]/a',)), callback="parse_items", follow= True),
-        Rule(LinkExtractor(allow=(), restrict_xpaths=('//a[@data-link-name="article"]',)), callback="parse_items", follow= True),
+        Rule(LinkExtractor(allow=(), restrict_xpaths=('//div[@class="fc-item__container"]/a',)), callback="parse_items", follow= False),
+        # Rule(LinkExtractor(allow=(), restrict_xpaths=('//a[@data-link-name="article"]',)), callback="parse_items", follow= True),
     )
 
     def parse_items(self, response):
