@@ -5,7 +5,7 @@ from scrapy.http import Request
 from ..items import NewsItem
 from datetime import datetime
 import pandas as pd
-import newsplease
+from newsplease import NewsPlease
 import re
 
 
@@ -23,43 +23,24 @@ class IndependentUrlSpider(CrawlSpider):
     rules = (
          Rule(LinkExtractor(allow=(), restrict_xpaths=('//ol[@class="margin archive-news-list"]/li/a',)), callback="start_requests", follow= False),)
 
-    def start_requests(self):
-        hxs = HtmlXPathSelector(response)
-        for url in self.start_urls:
-            newslinks = hxs.xpath('//ol[@class="margin archive-news-list"]/li/@href').extract()
-            for link in newslinks:
-                yield(Request(link, callback=self.parse_items, dont_filter=True))
+    #def start_requests(self):
+    #    hxs = HtmlXPathSelector(response)
+    #    for url in self.start_urls:
+    #        newslinks = hxs.xpath('//ol[@class="margin archive-news-list"]/li/@href').extract()
+    #        for link in newslinks:
+    #            yield(Request(link, callback=self.parse_items, dont_filter=True))
 
     def parse_items(self, response):
         hxs = HtmlXPathSelector(response)
         item = NewsItem()
         item["link"] = response.request.url
-        newsplease.from_url([item["link"]])
-        item["lang"] = "en"
+        article = NewsPlease.from_url(item["link"])
+        item["lang"]   = "en"
         item["source"] = "independent"
-
-        title       = hxs.xpath('//h1[@itemprop="headline"]/text()').extract()
-        intro       = hxs.xpath('//div[@class="intro"]/p/text()').extract()
-        author      = hxs.xpath('//span[@itemprop="name"]/a/text()').extract()
-        category    = hxs.xpath('//ol[@class="breadcrumbs clearfix"]//a//text()').extract()
-        new_content = hxs.xpath('//div[@itemprop="articleBody"]/p//text()').extract()
-        date_time   = hxs.xpath('//ul[@class="caption meta inline-pipes-list"]//time/@datetime').extract()
-        #
-        # Processing outputs
-        author = [re.sub('^By\s','',a) for a in author]
-        author = [re.sub('\sin\s.*','',a) for a in author]
-        new_content = [p for p in new_content if not re.search(u'\u2022',p)]
-        new_content = [p for p in new_content if not re.search('font-family|background-color:',p)]
-        new_content = ' '.join(new_content)
-        new_content = re.sub('\n','',new_content)
-        item["content"] = re.sub('\s{2,}',' ',new_content)
-        author = '|'.join(author)
-        item["category"] = '|'.join(category)
-        item["intro"]  = ' '.join(intro)
-        item["title"]  = ' '.join(title)
-        datte    = re.findall('[0-9]+.[0-9]+.[0-9]+',date_time[0])[0]
-        tme      = re.findall('[0-9]+:[0-9]+',date_time[0])[0]
-        datte    = datte.split('/')
-        item["date_time"] = datte[2] + '-'  + datte[1] + '-' + datte[0] + 'T' + tme
-        item["author"] = author
+        item['title']   = article.title
+        item['intro']   = article.description
+        item["author"]  = '|'.join(article.authors)
+        item["content"] = article.text
+        item["date_time"] = article.date_publish.isoformat()
+        item["category"]  = ''
         return(item)
