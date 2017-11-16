@@ -21,7 +21,7 @@ class IndependentUrlSpider(CrawlSpider):
         self.start_urls = ["http://www.independent.co.uk/archive/%s" % d for d in date_inds]
 
     rules = (
-         Rule(LinkExtractor(allow=(), restrict_xpaths=('//ol[@class="margin archive-news-list"]/li/a',)), callback="start_requests", follow= True),)
+         Rule(LinkExtractor(allow=(), restrict_xpaths=('//ol[@class="margin archive-news-list"]/li/a',)), callback="start_requests", follow= False),)
 
     def start_requests(self):
         hxs = HtmlXPathSelector(response)
