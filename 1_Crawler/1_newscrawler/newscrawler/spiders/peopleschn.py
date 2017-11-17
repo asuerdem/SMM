@@ -21,7 +21,7 @@ class PeoplesChinaSpider(CrawlSpider):
 
     rules = (
         Rule(LinkExtractor(allow=(), restrict_xpaths=('//div[@class="p1_left fl"]//a',
-        '//div[@class="p1_right fr"]//a','//div[@class="p1_c fl"]//a','//div[@class="p1_c2 fl"]//a',)),deny=('//div[@class="ad02 clear"]/a'), callback="parse_items", follow= True),
+        '//div[@class="p1_right fr"]//a','//div[@class="p1_c fl"]//a','//div[@class="p1_c2 fl"]//a',),deny=('//div[@class="ad02 clear"]/a')), callback="parse_items", follow= True),
     )
 
     def parse_items(self, response):
