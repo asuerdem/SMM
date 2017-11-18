@@ -17,14 +17,15 @@ class GuardianSpider(CrawlSpider):
         #  The archive pages that we usually generate by using Excel
         super(GuardianSpider, self).__init__(*args, **kwargs)
         begin_date = pd.Timestamp(yearmonth + "-01")
-        end_date = pd.Timestamp(begin_date) + pd.DateOffset(months=0) + pd.DateOffset(days=30)
+        end_date = pd.Timestamp(begin_date) + pd.DateOffset(months=0) + pd.DateOffset(days=1) 
+        #for 30 days months need a solution, either delete duplicates or regex
         date_inds  = [d.date().isoformat().replace("-","/") for d in pd.date_range(begin_date,end_date)]
         month_dict = {'01':'jan', '02':'feb', '03':'mar', '04':'april', '05':'may',
         '06':'jun', '07':'jul', '08':'aug', '09':'sep', '10':'oct', '11':'nov', '12':'dec' }
         months = [month_dict[ re.findall('[0-9]{4}/([0-9]{2})/[0-9]{2}',d)[0] ] for d in date_inds]
         date_inds = [re.sub('/[0-9]{2}/',"/" + month_dict[re.findall('[0-9]{4}/([0-9]{2})/[0-9]{2}',d)[0] ] + "/",d)  for d in date_inds]
        
-        category_list = ["technology"]
+        category_list = ["technology", "uk-news", "world", "commentisfree", "culture", "business"]
         urls_list = [["https://www.theguardian.com/%s/%s/all" % (c,d) for c in category_list] for d in date_inds]
         self.start_urls = sum(urls_list,[]) # This will be the list of archive pages
         
