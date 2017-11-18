@@ -17,7 +17,7 @@ class GuardianSpider(CrawlSpider):
         #  The archive pages that we usually generate by using Excel
         super(GuardianSpider, self).__init__(*args, **kwargs)
         begin_date = pd.Timestamp(yearmonth + "-01")
-        end_date = pd.Timestamp(begin_date) + pd.DateOffset(months=0) + pd.DateOffset(days=29)
+        end_date = pd.Timestamp(begin_date) + pd.DateOffset(months=0) + pd.DateOffset(days=30)
         date_inds  = [d.date().isoformat().replace("-","/") for d in pd.date_range(begin_date,end_date)]
         month_dict = {'01':'jan', '02':'feb', '03':'mar', '04':'april', '05':'may',
         '06':'jun', '07':'jul', '08':'aug', '09':'sep', '10':'oct', '11':'nov', '12':'dec' }
