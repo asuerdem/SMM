@@ -16,8 +16,10 @@ class GuardianSpider(CrawlSpider):
         category_list = ["technology"]
         urls_list = [["https://www.theguardian.com/%s/%s/all" % (c,d) for c in category_list] for d in date_inds]
         self.start_urls = sum(urls_list,[]) # This will be the list of archive pages
+        
+        
        
-    def __init__(self, yearmonth='', *args, **kwargs):
+        def __init__(self, yearmonth='', *args, **kwargs):
         ## LINK GENERATOR:
         #  The archive pages that we usually generate by using Excel
         super(GuardianSpider, self).__init__(*args, **kwargs)
