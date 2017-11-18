@@ -48,20 +48,9 @@ class GuardianSpider(CrawlSpider):
         author      = hxs.xpath('//span[@itemprop="name"]/a/text()').extract()
         category    = hxs.xpath('//ul[@class="signposting"]//a/text()').extract()
         new_content = hxs.xpath('//div[@itemprop="articleBody"]/p//text()').extract()
-        topic        = hxs.xpath('//ul[@class="submeta__links"]//a/text()').extract()
+        topic       = hxs.xpath('//div[@class="submeta__section-labels"]//a/text()').extract()
         date_time   = hxs.xpath('//p[@class="content__dateline"]//time[@itemprop="datePublished"]/@datetime').extract()
-       
-
-Google
-</a>
-</li>
-<li class="submeta__link-item">
-<a class="submeta__link" href="https://www.theguardian.com/technology/blog">
-Technology blog
-</a>
-</li>
-</ul>
-</div>
+      
         #
         # Processing outputs
         item["intro"]      = ' '.join(intro)
