@@ -64,4 +64,5 @@ class GuardianSpider(CrawlSpider):
         item["category"]   = '|'.join(category)
         item["date_time"]  = " ".join(date_time)
         item["author"]     = '|'.join(author)
+        item["topic"]   = '|'.join(topic)
         return(item)
