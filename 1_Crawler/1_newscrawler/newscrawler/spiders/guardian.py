@@ -25,7 +25,7 @@ class GuardianSpider(CrawlSpider):
         months = [month_dict[ re.findall('[0-9]{4}/([0-9]{2})/[0-9]{2}',d)[0] ] for d in date_inds]
         date_inds = [re.sub('/[0-9]{2}/',"/" + month_dict[re.findall('[0-9]{4}/([0-9]{2})/[0-9]{2}',d)[0] ] + "/",d)  for d in date_inds]
        
-        category_list = ["technology", "science"]
+        category_list = ["technology", "science", "global-development]
         urls_list = [["https://www.theguardian.com/%s/%s/all" % (c,d) for c in category_list] for d in date_inds]
         self.start_urls = sum(urls_list,[]) # This will be the list of archive pages
         
