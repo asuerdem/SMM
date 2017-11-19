@@ -61,7 +61,7 @@ class GuardianSpider(CrawlSpider):
         new_content        = ' '.join(new_content)
         new_content        = re.sub('\n',' ',new_content)
         item["content"]    = re.sub('\s{2,}',' ',new_content)
-        #category           = category[1:]
+        category           = category[1:]
         #category           = [c for c in category if not c==">"]
         item["category"]   = '|'.join(category)
         item["date_time"]  = " ".join(date_time)
