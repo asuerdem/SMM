@@ -42,7 +42,7 @@ class WiredSpider(CrawlSpider):
         new_content        = ' '.join(new_content)
         new_content        = re.sub('\n',' ',new_content)
         item["content"]    = re.sub('\s{2,}',' ',new_content)
-        category           = list(set([c for c in category if re.search("\S")]))
+        category           = list(set([c for c in category if re.search("\S",c)]))
         item["category"]   = '|'.join(category)
         date_time          = " ".join(date_time)
         item["author"]     = " ".join(author).strip()

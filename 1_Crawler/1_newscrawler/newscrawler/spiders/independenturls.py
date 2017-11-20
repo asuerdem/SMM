@@ -10,6 +10,7 @@ import re
 
 
 class IndependentUrlSpider(CrawlSpider):
+    handle_httpstatus_list = [400]
     name = "independenturls"
     allowed_domains = ["independent.co.uk"]
 
