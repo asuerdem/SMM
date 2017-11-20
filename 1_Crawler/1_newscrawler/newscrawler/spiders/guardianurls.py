@@ -42,6 +42,7 @@ class GuardianSpider(CrawlSpider):
         item["lang"]   = "en"
         item["source"] = "guardian"
         topic = hxs.xpath('//ul[@class="submeta__links"]//a/text()').extract()
+        topic = [t.strip() for t in topic]
         item['topic']   = '|'.join(topic)
         item['title']   = article.title
         item['intro']   = article.description
