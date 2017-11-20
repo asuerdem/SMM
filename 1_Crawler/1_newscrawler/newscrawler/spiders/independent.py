@@ -35,6 +35,9 @@ class IndependentSpider(CrawlSpider):
         category    = hxs.xpath('//ol[@class="breadcrumbs clearfix"]//a//text()').extract()
         new_content = hxs.xpath('//div[@itemprop="articleBody"]/p//text()').extract()
         date_time   = hxs.xpath('//ul[@class="caption meta inline-pipes-list"]//time/@datetime').extract()
+        #Ahmet added the following for the keywords, might be useful for machine learning
+        topic       = hxs.xpath('//ul[@class="inline-pipes-list"]//a//text()').extract() 
+                               
         #
         # Processing outputs
         author = [re.sub('^By\s','',a) for a in author]
