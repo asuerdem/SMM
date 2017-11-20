@@ -15,7 +15,7 @@ class PeoplesChinaSpider(CrawlSpider):
     def __init__(self, yearmonth='', *args, **kwargs):
         super(PeoplesChinaSpider, self).__init__(*args, **kwargs)
         begin_date = pd.Timestamp(yearmonth + "-01")
-        end_date = pd.Timestamp(begin_date) + pd.DateOffset(months=1) - pd.DateOffset(days=1)
+        end_date = pd.Timestamp(begin_date) + pd.DateOffset(months=0) + pd.DateOffset(days=1)
         date_inds  = [d.date().isoformat().replace("-","") for d in pd.date_range(begin_date,end_date)]
         self.start_urls = ["http://en.people.cn/review/%s.html" % d for d in date_inds]
 
