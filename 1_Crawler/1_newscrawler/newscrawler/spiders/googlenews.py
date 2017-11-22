@@ -17,7 +17,7 @@ class GoogleNewsSpider(CrawlSpider):
         super(GoogleNewsSpider, self).__init__(*args, **kwargs)
         query = query.replace("_","+")
         
-        starturl = 'https://www.bing.com/news/search?q=' + query + '&qs=n&form=QBNT&sp=-1&pq=' + query + '&sc=8-18&sk=&cvid=DFF4E78BE2CD4B909155C1E340FE0E01'
+        starturl = 'https://www.bing.com/news/search?q=' + query + '&FORM=HDRSC6'
         self.start_urls = [starturl] # This will be the list of archive pages
         #needs updating according to the following format: https://www.theguardian.com/world/2015/nov/09/all
         
