@@ -24,7 +24,7 @@ class GoogleNewsSpider(CrawlSpider):
         
     rules = (# Locates individual news page urls from each day's in archive
          #Rule(LinkExtractor(allow=(), restrict_xpaths=('//div[@class="fc-item__container"]/a',)), callback="parse_items", follow= False),
-        Rule(LinkExtractor(allow=(), restrict_xpaths=('//div[@class="deQdld"]//a',)), callback="parse_items", follow= False),
+        Rule(LinkExtractor(allow=(), restrict_xpaths=('//div[@class="deQdld"]//a',)), callback="parse_items", follow= True),
     )
 
     def parse_items(self, response):
