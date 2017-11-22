@@ -39,6 +39,10 @@ class GoogleNewsSpider(CrawlSpider):
         item['intro']   = article.description
         item["author"]  = '|'.join(article.authors)
         item["content"] = article.text
-        item["date_time"] = article.date_publish.isoformat()
+        try:
+            dtime = article.date_publish.isoformat()
+        except:
+            dtime = ''
+        item["date_time"] = dtime
         ### END ###
         return(item)
