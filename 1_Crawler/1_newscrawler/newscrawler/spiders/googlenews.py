@@ -10,7 +10,6 @@ import re
 
 class GoogleNewsSpider(CrawlSpider):
     name = "googlenews" # this will be used to call scrapy crawl ... code
-    allowed_domains = ["news.google.com"]
 
     def __init__(self, query='', *args, **kwargs):
         ## LINK GENERATOR:
