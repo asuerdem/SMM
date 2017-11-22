@@ -16,16 +16,15 @@ class GoogleNewsSpider(CrawlSpider):
         ## LINK GENERATOR:
         #  The archive pages that we usually generate by using Excel
         super(GoogleNewsSpider, self).__init__(*args, **kwargs)
-        query = query.replace("_","%20")
-        starturl = 'https://news.google.com/news/search/section/q/' + query + '/' + query + '?hl=en&gl=US&ned=us'
+        query = query.replace("_","+")
+        
+        starturl = 'https://www.bing.com/news/search?q=' + query + '&qs=n&form=QBNT&sp=-1&pq=' + query + '&sc=8-18&sk=&cvid=DFF4E78BE2CD4B909155C1E340FE0E01'
         self.start_urls = [starturl] # This will be the list of archive pages
         #needs updating according to the following format: https://www.theguardian.com/world/2015/nov/09/all
         
         
     rules = (# Locates individual news page urls from each day's in archive
-         #Rule(LinkExtractor(allow=(), restrict_xpaths=('//div[@class="fc-item__container"]/a',)), callback="parse_items", follow= False),
-        Rule(LinkExtractor(allow=(), restrict_xpaths=('//div[@class="deQdld"]//a',)), callback="parse_items", follow= True),
-        Rule(LinkExtractor(allow=(), restrict_xpaths=('//div[@class="noky8"]//a',)), callback="parse_items", follow= True),
+        Rule(LinkExtractor(allow=(), restrict_xpaths=('//a[@class="title"]',)), callback="parse_items", follow= False),        
     )
 
     def parse_items(self, response):
