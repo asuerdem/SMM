@@ -95,7 +95,7 @@ DOWNLOAD_DELAY = 0
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-ITEM_PIPELINES = ['guardian.pipelines.MongoDBPipeline', ]
+ITEM_PIPELINES = ['guardian.pipelines.MongoDBPipeline', 'independent.pipelines.MongoDBPipeline','peopleschina.pipelines.MongoDBPipeline','mirror.pipelines.MongoDBPipeline','telegraph.pipelines.MongoDBPipeline','dailymail.pipelines.MongoDBPipeline']
 
 MONGODB_SERVER = "localhost"
 MONGODB_PORT = 27017
