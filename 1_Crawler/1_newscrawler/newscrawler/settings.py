@@ -94,3 +94,11 @@ DOWNLOAD_DELAY = 0
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+ITEM_PIPELINES = ['guardian.pipelines.MongoDBPipeline', ]
+
+MONGODB_SERVER = "localhost"
+MONGODB_PORT = 27017
+MONGODB_DB = "archive_eng"
+MONGODB_COLLECTION = "news"
+
