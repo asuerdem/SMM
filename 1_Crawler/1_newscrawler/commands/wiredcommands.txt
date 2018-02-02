@@ -1,0 +1,20 @@
+scrapy crawl wiredauto -a begin='2014-01' -a end='2014-03' -o dataout/wired2014Q1.json -t json
+scrapy crawl wiredauto -a begin='2014-04' -a end='2014-06' -o dataout/wired2014Q2.json -t json
+scrapy crawl wiredauto -a begin='2014-07' -a end='2014-09' -o dataout/wired2014Q3.json -t json
+scrapy crawl wiredauto -a begin='2014-10' -a end='2014-12' -o dataout/wired2014Q4.json -t json
+python sleeper.py
+scrapy crawl wiredauto -a begin='2015-01' -a end='2015-03' -o dataout/wired2015Q1.json -t json
+scrapy crawl wiredauto -a begin='2015-04' -a end='2015-06' -o dataout/wired2015Q2.json -t json
+scrapy crawl wiredauto -a begin='2015-07' -a end='2015-09' -o dataout/wired2015Q3.json -t json
+scrapy crawl wiredauto -a begin='2015-10' -a end='2015-12' -o dataout/wired2015Q4.json -t json
+python sleeper.py
+scrapy crawl wiredauto -a begin='2016-01' -a end='2016-03' -o dataout/wired2016Q1.json -t json
+scrapy crawl wiredauto -a begin='2016-04' -a end='2016-06' -o dataout/wired2016Q2.json -t json
+scrapy crawl wiredauto -a begin='2016-07' -a end='2016-09' -o dataout/wired2016Q3.json -t json
+scrapy crawl wiredauto -a begin='2016-10' -a end='2016-12' -o dataout/wired2016Q4.json -t json
+python sleeper.py
+scrapy crawl wiredauto -a begin='2017-01' -a end='2017-03' -o dataout/wired2017Q1.json -t json
+scrapy crawl wiredauto -a begin='2017-04' -a end='2017-06' -o dataout/wired2017Q2.json -t json
+scrapy crawl wiredauto -a begin='2017-07' -a end='2017-09' -o dataout/wired2017Q3.json -t json
+scrapy crawl wiredauto -a begin='2017-10' -a end='2017-12' -o dataout/wired2017Q4.json -t json
+python sleeper.py
