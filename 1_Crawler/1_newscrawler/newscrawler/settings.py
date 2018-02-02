@@ -95,12 +95,12 @@ DOWNLOAD_DELAY = 0
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-ITEM_PIPELINES = {'guardian.pipelines.MongoDBPipeline':100, 'independent.pipelines.MongoDBPipeline':100,
-                  'peopleschina.pipelines.MongoDBPipeline':100,'mirror.pipelines.MongoDBPipeline':100,
-                  'telegraph.pipelines.MongoDBPipeline':100,'dailymail.pipelines.MongoDBPipeline':100}
+# ITEM_PIPELINES = {'guardian.pipelines.MongoDBPipeline':100, 'independent.pipelines.MongoDBPipeline':100,
+#                   'peopleschina.pipelines.MongoDBPipeline':100,'mirror.pipelines.MongoDBPipeline':100,
+#                   'telegraph.pipelines.MongoDBPipeline':100,'dailymail.pipelines.MongoDBPipeline':100}
 
-MONGODB_SERVER = "localhost"
-MONGODB_PORT = 27017
-MONGODB_DB = "archive_eng"
-MONGODB_COLLECTION = "news"
+# MONGODB_SERVER = "localhost"
+# MONGODB_PORT = 27017
+# MONGODB_DB = "archive_eng"
+# MONGODB_COLLECTION = "news"
 
