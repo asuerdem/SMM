@@ -11,6 +11,7 @@ import re
 class WiredAutoSpider(CrawlSpider):
     name = "wiredauto"
     allowed_domains = ["wired.com"]
+    collection_name = 'wired'
 
     def __init__(self, begin='', end='', *args, **kwargs):
         super(WiredAutoSpider, self).__init__(*args, **kwargs)
@@ -21,7 +22,7 @@ class WiredAutoSpider(CrawlSpider):
 
     rules = (
         Rule(LinkExtractor(allow=(), restrict_xpaths=('//li/a[@class="clearfix pad"]',)), callback="parse_items", follow= False),
-        Rule(LinkExtractor(allow=(), restrict_xpaths=('//a[@class="next page-numbers"]',)), callback="parse_items", follow= False),
+        Rule(LinkExtractor(allow=(), restrict_xpaths=('//a[@class="next page-numbers"]',)), callback="parse_items", follow= True),
     )
 
 

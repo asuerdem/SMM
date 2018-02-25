@@ -13,6 +13,7 @@ class IndependentUrlSpider(CrawlSpider):
     handle_httpstatus_list = [400]
     name = "independenturls"
     allowed_domains = ["independent.co.uk"]
+    collection_name = 'independent'
 
     def __init__(self, yearmonth='', *args, **kwargs):
         super(IndependentUrlSpider, self).__init__(*args, **kwargs)
