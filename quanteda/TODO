@@ -1,0 +1,89 @@
+1. KW search yapildiginda crash ediyor, (DONE)
+2. yine explore da , graph kisminda selecet corpus filter ile birlikte, groupby: diye ir tab olursa iyi olur. boylece sadece yillara degil, baska categorilere gore de boxplot olur(grouping kisminda yaptigimiz gibi)(DONE)
+3. Grouped wordcloud da asagidaki format daha duzgun bir gorunum veriyor(DONE)
+#Grouping
+bu iki line genel DFM icin uygulayabilirsin
+ai.grp <- dfm(aicorp, groups = "Year", remove = stopwords("SMART"),remove_numbers = TRUE, remove_punct = TRUE)
+
+bu da wordcloud icin
+dfm_sort(ai.grp)[, 1:20]
+textplot_wordcloud(ai.grp, comparison = T,max.words=400, title.size=1.5, scale=c(3,.5),random.order=FALSE, rot.per = .01)
+
+4. Baloon plot da labels ust uste biniyor (dictionary de) (DONE)
+5. similarities tab ini cikarabilirsin (DONE)
+
+6. cluster icin su script daha iyi (DONE)
+quantdfm <- dfm(aicorp, 
+                remove_punct = TRUE, remove_numbers = TRUE, remove = stopwords("SMART"), stem = TRUE)
+ai.dfmw <- dfm_weight(quantdfm, type ="tfidf" )
+ai.trm <- dfm_trim(ai.dfmw, min_count = 100, max_count = 200,  verbose = T)
+
+wordDfm <- dfm_sort(ai.dfmw)
+wordDfm <- dfm_remove(wordDfm, "jia")# to remove the words(for a second round, we need to add a tab for that)
+wordDfm <-t(wordDfm)[1:100, ]  #remove t (transpose) for document clustering
+
+d <- dist(wordDfm)
+
+library(MASS)
+library(dendextend)
+wordCluster <- hclust(d, method = "ward.D")
+plot(wordCluster, cex = .75,labels = docnames(wordDfm))
+
+
+!!!!
+7) Topic Detection
+
+8)Server cannot allocate memory hatas?? (?) ara??t??r | fuat hocaya sor
+
+
+!!!!!!!!ahmet
+24.01 2.25 halinde calismayanlar:
+1. textcloud gostermiyor show plot yapinca (plotu ciziyor ama transparent, ancka pop up yapinca gozukuyor)
+2.  groupingde bazi yillarf gozukmuyor renkleri gozukuyor kendileri gozukmuyor. nedeni sayfaya sigmamasi olabilir>
+Warning in wordcloud::comparison.cloud(t(as.matrix(x)), ...) :
+  range could not be fit on page. It will not be plotted.
+  3. cluster a eklenecek features var, dendogrami pop up yapabilir miyiz
+  
+  
+  4. Topic detection simdilik bosver, onun yerine
+  correspondence analysis:
+  
+  quantdfm <- dfm(aicorp, groups = "Year",
+                remove_punct = TRUE, remove_numbers = TRUE, remove = stopwords("SMART"), stem = TRUE)
+aigr.trm <- dfm_trim(quantdfm, min_count = 300, verbose = T)
+
+dt <- as.table(as.matrix(aigr.trm))
+library("FactoMineR")
+library(factoextra)
+res.ca <- CA(dt, graph = F)
+fviz_ca_biplot(res.ca, repel = TRUE)
+
+
+5. Butun dfm leri bu sekilde yaoar misin?
+quantdfm <- dfm(aicorp, groups = "Year",#yalnizca grouping de gecerli###
+                remove_punct = TRUE, remove_numbers = TRUE, remove = stopwords("SMART"), stem = TRUE)
+                
+                
+                
+6. cluster yenisi:
+
+quantdfm <- dfm(aicorp, 
+                remove_punct = TRUE, remove_numbers = TRUE, remove = stopwords("SMART"), stem = TRUE)
+ai.dfmw <- dfm_weight(quantdfm, type ="tfidf" )
+ai.trm <- dfm_trim(ai.dfmw, min_count = 100, max_count = 500,  verbose = T)
+
+wordDfm <- dfm_sort(ai.dfmw)
+wordDfm <- dfm_remove(wordDfm, "jia")
+wordDfm <-t(wordDfm)[1:100, ]  
+library(proxy)
+d <- simil(as.matrix(wordDfm), method="Jaccard")
+
+library(MASS)
+library(dendextend)
+wordCluster <- hclust(d, method = "ward.D")
+plot(wordCluster, cex = .75,labels = docnames(wordDfm))
+
+
+
+ONEMLI::::
+HERSEFERINDE CSV YUKLEMEMEK ICIN CORPUS BIR KERE OLUSTUGUNDA BUNU KAYDEDIP BIR DAHA ACILDIGINDA ORADAN DEVAM
