@@ -21,12 +21,13 @@ def json_cleaner(jsondest,poss = ['NOUN','ADJ','ADV'],tags = [],lemmatize = True
             news = json.loads(news)
             doc = nlp(news['Text'])
             filtered_words  = []
+            filtered_lemmas = []
             for token in doc: # select words if conditions hold
                 if (token.pos_ in poss or token.tag_ in tags) and token.lemma_ not in STOP_WORDS + ['-PRON-']:
-                    outword = token.lemma_ if lemmatize else token.text
-                    filtered_words.append(outword)
-            if counter % 1 == 0: print('Processed %s documents' % counter)
-            news['Text'] = ' '.join(filtered_words)
+                    filtered_words.append(token.text)
+                    filtered_lemmas.append(token.lemma_)
+            print('Document %s is processed' % counter)
+            news['Text'] = ' '.join(filtered_lemmas) if lemmatize else ' '.join(filtered_words)
             # Writing
             writefile.write('\n')
             json.dump(news, writefile)
